@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<math.h>
+struct complex
+{
+        float real;
+        float img;
+};
+int findRoots(float a , float b ,float c,struct complex *r1,struct complex *r2)
+{
+        if(a==0)
+        {
+                return -1;
+        }
+        float d =(b*b)-(4*a*c);
+        if(d==0)
+        {
+                (*r1).real = -b/(2*a);
+                (*r1).img = 0;
+                (*r2).real = -b/(2*a);
+                (*r2).img = 0;
+                return 0;
+        }if(d>0)
+        {
+                (*r1).real = (-b+sqrt(d))/(2*a);
+                (*r1).img = 0;
+                (*r2).real = (-b-sqrt(d))/(2*a);
+                (*r2).img = 0;
+                return 1;
+        }
+        if(d<0)
+        {
+                (*r1).real = (-b)/(2*a);
+                (*r1).img = (sqrt(-d))/(2*a);
+                (*r2).real = (-b)/(2*a);
+                (*r2).img = (-sqrt(-d))/(2*a);
+                return 2;
+        }       
+ }                                                                                                         
+int main()
+{                                                                                                                 float a , b , c;
+        struct complex r1 , r2 ;
+        printf("Enter the coefficients of x^2 , x and constant");
+        scanf("%f%f%f",&a,&b,&c);
+        int n = findRoots(a , b , c , &r1,&r2);
+
+        switch(n)
+        {
+                case 0:
+                  printf("Roots are real and equal \n");
+                  break ;
+                case 1:
+                  printf("Roots are real and distinct \n");
+                  break ;
+
+                case 2:
+                  printf("Roots are imaginary \n");
+                  break ;
+                  case -1:
+                  printf("not a quadratic equation \n");
+                  break ;
+                default :
+                  break ;
+        }
+        printf("Roots of the quadratic equation are %f + i%f and %f - i%f \n",r1.real,r1.img,r2.real,r2.img);
+        return 0;
+}
