@@ -11,7 +11,7 @@ float computeSin(int x)
 	float term ,sum, diff, prev;
 	int i;
 	sum = term = diff = x;
-	for(i = 3 ;diff>0.000001;i++)
+	for(i = 3 ;prev>0.000001;i=(i+2))
 	{
 		prev = term ;
 		term = (-term * x *x)/(i*(i-1));
