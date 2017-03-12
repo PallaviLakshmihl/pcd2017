@@ -2,8 +2,9 @@
 float polynomial(int x , int n,float a[n+1])
 {
 	float sum = 0;
+	int i ;
 	sum = (a[n]*x)+a[n-1];
-	for(int i = (n-2);i>=0;i++)
+	for( i = (n-2);i>=0;i--)
 	{
 		sum = (sum*x)+a[i];
 	}
@@ -11,7 +12,7 @@ float polynomial(int x , int n,float a[n+1])
 }
 int main()
 {
-	int x , n;
+	int x , n ,i;
 	float a[n+1];
 	float result ;
 	printf("Enter the value of x :");
@@ -21,7 +22,7 @@ int main()
 	if(n>0)
 	{
 		printf("Enter the value of coefficients \n");
-		for(int i = 0 ;i<=n;i++)
+		for( i = 0 ;i<=n;i++)
 		{
 			scanf("%f",&a[i]);
 		}
