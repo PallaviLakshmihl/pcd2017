@@ -13,12 +13,12 @@ float polynomial(int x , int n,float a[n+1])
 int main()
 {
 	int x , n ,i;
-	float a[n+1];
 	float result ;
 	printf("Enter the value of x :");
 	scanf("%d",&x);
 	printf("Enter the degree of polynomial : ");
 	scanf("%d",&n);
+	float a[n+1];
 	if(n>0)
 	{
 		printf("Enter the value of coefficients \n");
