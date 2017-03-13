@@ -6,7 +6,7 @@ float convertRadians(float d)
 	radian = (3.1412/180)*d;
 	return radian;
 }
-float computeSin(int x)
+float computeSin(float x)
 {
 	float term ,sum, diff, prev;
 	int i;
